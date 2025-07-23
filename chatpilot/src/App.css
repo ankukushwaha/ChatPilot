@@ -1,0 +1,167 @@
+/* GLOBAL BACKGROUND/TEXT */
+
+.theme-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.theme-dark {
+  background-color: #1c1c2b;
+  color: #f0f0f0;
+}
+
+/* WRAPPER */
+.app-wrapper {
+  height: 100vh;
+}
+
+/* HEADER */
+.header-bar {
+  height: 56px;
+  border-bottom: 1px solid #ccc;
+  background-color: #ffffff;
+}
+
+.theme-dark .header-bar {
+  background-color: #2a2a40;
+  border-bottom: 1px solid #444;
+}
+
+/* PANELS */
+.left-panel, .right-panel, .chat-panel {
+  padding: 1rem;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.left-panel, .right-panel {
+  width: 22%;
+  background-color: #f1f1f1;
+}
+
+.chat-panel {
+  background-color: #ffffff;
+  flex-grow: 1;
+}
+
+/* DARK PANELS */
+.theme-dark .left-panel,
+.theme-dark .right-panel,
+.theme-dark .chat-panel {
+  background-color: #2a2a40;
+  color: #f0f0f0;
+}
+
+.theme-dark .border-end,
+.theme-dark .border-start {
+  border-color: #444 !important;
+}
+
+/* COLLAPSE BUTTONS */
+.collapse-btn {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.collapse-btn:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 50%;
+}
+
+/* Ensure the middle chat section doesn't scroll itself */
+.middle-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;   /* ❌ prevents scrollbar on the column itself */
+}
+
+/* Main chat panel — no scroll on outer */
+.chat-panel {
+  overflow: hidden;
+}
+
+/* Scrollable message area */
+.chat-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.chat-messages-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.bg-purple {
+  background-color: #7e57c2; /* Material Design deep purple */
+  color: white;
+}
+
+/*  for chatting div */
+.chat-bubble-wrapper {
+  position: relative;
+  max-width: 60%;
+  margin: 8px;
+}
+
+.chat-bubble {
+  border-radius: 2rem;
+  padding: 10px 14px;
+  color: #fff;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.agent .chat-bubble {
+  background-color: #00c853; /* green */
+  border-bottom-right-radius: 1.4rem;
+}
+
+.visitor .chat-bubble {
+  background-color: #8e44ad; /* purple */
+  border-bottom-left-radius: 1.4rem;
+}
+
+/* Bird beak tail styles using pseudo-elements */
+.agent .chat-bubble::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: #00c853;
+  border-bottom: 0;
+  border-top-right-radius: 8px;
+  transform: rotate(45deg);
+}
+
+.visitor .chat-bubble::after {
+  content: '';
+  position: absolute;
+  left: -12px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right-color: #8e44ad;
+  border-bottom: 0;
+  border-top-left-radius: 8px;
+  transform: rotate(-45deg);
+}
+
+.message-time {
+  font-size: 11px;
+  color: #ddd;
+  margin-top: 4px;
+  text-align: right;
+}
+
+
+
