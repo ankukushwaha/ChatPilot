@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Deploy React app to GitHub Pages
 
 on:
   push:
@@ -6,15 +6,14 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 18
 
@@ -22,7 +21,7 @@ jobs:
         working-directory: ./chatpilot
         run: npm install
 
-      - name: Build React app
+      - name: Build project
         working-directory: ./chatpilot
         run: npm run build
 
