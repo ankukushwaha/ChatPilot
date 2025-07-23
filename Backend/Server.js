@@ -1,3 +1,12 @@
+const express = require('express');
+const cors = require('cors');
+
+const proje = express();
+
+// ✅ Allow CORS
+proje.use(cors());
+
+
 const http = require('http');
 const app = require('./App');
 const socketHandler = require('./Socket/SocketHandler');
