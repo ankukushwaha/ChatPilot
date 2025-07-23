@@ -1,2 +1,2 @@
 import { io } from "socket.io-client";
-export const socket = io("http://localhost:5000"); // your backend URL
+export const socket = io("https://chatpilot-backend-vzr4.onrender.com"); // your backend URL
